@@ -1,0 +1,30 @@
+{
+  "name": "todos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "priority": {
+      "type": "string",
+      "required": true
+    },
+    "responsible": {
+      "type": "string",
+      "required": true
+    },
+    "completed": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
