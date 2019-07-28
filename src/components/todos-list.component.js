@@ -3,27 +3,20 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import { connect } from "react-redux";
 import { message } from "antd";
-
+// import Todo from "./todo.component"
 import { MdModeEdit, MdDelete } from "react-icons/md";
 
 class TodosList extends Component {
   state = { todos: [] };
 
   componentWillMount() {
-    Axios.get("http://127.0.0.1:3030/api/todos")
-      .then(res => {
-        this.setState({ todos: res.data });
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-
+    this.getTodo()
     if (!sessionStorage.getItem("login")) {
       this.props.history.push("/");
     }
   }
 
-  componentWillUpdate() {
+  getTodo = () => {
     Axios.get("http://127.0.0.1:3030/api/todos")
       .then(res => {
         this.setState({ todos: res.data });
@@ -31,13 +24,19 @@ class TodosList extends Component {
       .catch(function(err) {
         console.log(err);
       });
+  };
+
+  componentDidUpdate(prevState){
+    if(prevState !== this.state){
+      this.getTodo()
+    }
   }
 
   deleteItem(id, e) {
     Axios.delete("http://localhost:3030/api/todos/" + id)
       .then(res => {
         console.log(res);
-        message.success('deleted')
+        message.success("deleted");
       })
       .catch(function(err) {
         console.log(err);
