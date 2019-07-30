@@ -12,7 +12,8 @@ class TodosList extends Component {
   componentWillMount() {
     this.getTodo()
     if (!sessionStorage.getItem("login")) {
-      this.props.history.push("/");
+      // this.props.history.push("/");
+      window.location.replace("/");
     }
   }
 

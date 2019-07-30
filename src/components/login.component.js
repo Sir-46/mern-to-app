@@ -39,38 +39,40 @@ export default class login extends Component {
 
   render() {
     return (
-      <div className="container my-5">
-        <div className="card" style={{minWidth: 300,maxWidth: 500, height: 30 + '%', marginLeft: 'auto', marginRight: 'auto'}}>
-          <div className="card-body">
-            <form>
-              <div className="form-group">
-                <label htmlFor="">Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  className="form-control"
-                  value={this.state.username}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  className="form-control"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                />
-              </div>
-              {/* {this.state.email}<br/>
-                            {this.state.password} */}
-              <div className="form-group">
-                <button onClick={this.login} className="btn btn-primary">
-                  Login
-                </button>
-              </div>
-            </form>
+      <div>
+        <div className="container">
+          <div className="card" style={{maxWidth: 500,maxHeight: 'auto', margin: 'auto', marginTop: '10px'}}>
+            <div className="card-body">
+              <form>
+                <div className="form-group">
+                  <label htmlFor="">Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    className="form-control"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {/* {this.state.email}<br/>
+                              {this.state.password} */}
+                <div className="form-group">
+                  <button onClick={this.login} className="btn btn-primary">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
